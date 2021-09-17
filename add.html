@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add products</title>
+  </head>
+  <body>
+    <section id="adding">
+        <div class="add">
+            <form
+              class="adding-form"
+              action=""
+              method="POST"
+              id="adding-form"
+            >
+              <div class="adding-name">
+                <label for="name" class="name-1"></label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  class="add-name"
+                  placeholder="Name"
+                  required
+                />
+              </div>
+    
+              <div class="adding-description">
+                <label for="description" class="description"></label>
+                <input
+                  type="text"
+                  name="description"
+                  id="description"
+                  class="add-description"
+                  placeholder="Description"
+                  required
+                />
+              </div>
+    
+              <div class="adding-price">
+                <label for="price" class="price"></label>
+                <input
+                  type="text"
+                  name="price"
+                  id="price"
+                  class="add-price"
+                  placeholder="Price"
+                  required
+                />
+              </div>
+    
+              <div class="adding-category">
+                <label for="category" class="category"></label>
+                <input
+                  type="text"
+                  name="category"
+                  id="category"
+                  class="add-category"
+                  placeholder="Category"
+                  required
+                />
+                
+              </div>
+              <div class="adding-image">
+                <label for="image" class="image"></label>
+                <input
+                  type="text"
+                  name="image"
+                  id="image"
+                  class="add-image"
+                  placeholder="Url link for the Image"
+                  required
+                />
+                
+              </div>
+              <div>
+                <button type="submit" class="add-btn">Add Product </button>
+                <button type="submit" class="return-btn"><a href="./index.html">Return to Homepage</a></button>
+              </div>
+            </form>
+          </div>
+    <script src="./add.js"></script>
+  </body>
+</html>

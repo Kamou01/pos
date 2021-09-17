@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+  </head>
+  <body>
+    <section id="login-form">
+      <div class="signin">
+        <form class="login-form" action="" method="POST" id="signup-form">
+          <div class="signup-username">
+            <label for="last-name" class="user-name"></label>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              class="login-username"
+              placeholder="Username"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="last-name" class="pass-word"></label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              class="login-password"
+              placeholder="Password"
+              required
+            />
+            <p class="login-link">
+              Don't have an account?
+              <a href="./register.html"><b>Sign Up</b></a>
+            </p>
+          </div>
+          <div>
+            <button type="submit" class="signup-btn">Login</button>
+            <button type="submit" class="return-btn"><a href="./index.html">Return to Homepage</a></button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <script src="./identification.js"></script>
+  </body>
+</html>
