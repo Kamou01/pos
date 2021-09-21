@@ -1,11 +1,13 @@
+let products = []
+
 function getProducts() {
     fetch("https://pointof-sale2.herokuapp.com/view_products/")
         .then(response => response.json())
         .then(data => {
             console.log(data.products)
             let products_list = [];
-            let products = data.products;
-            let products_container = document.querySelector(".products-container");
+            products = data.products;
+            let products_container = document.querySelector(".product-container");
 
             // saving products
             localStorage.setItem("products", JSON.stringify(products_list));
@@ -28,6 +30,9 @@ function renderProducts(product) {
     <h1>${product.description}</h1>
     <h1>${product.category}</h1>
     <h1>${product.image}</h1>
+    <button type="button" class="addto-cart" onclick="addToCart(${product.id})">
+      Add to Cart <i class="fas fa-cart-plus"></i>
+    </button>
     <button onclick="deleteProduct(${product.id})">delete</button>
     <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#product-${product.id}">
@@ -138,6 +143,21 @@ function deleteProduct(id) {
 
 }
 
+function searchFilter(){
+  let searchTerm = document.querySelector("#search").value
+  console.log(searchTerm)
+  console.log(products)
+  let foundProducts = products.filter(product => {
+    return product.name.toLowerCase().includes(searchTerm.toLowerCase())
+  })
+  console.log(foundProducts)
+  let container = document.querySelector(".product-container");
+  container.innerHTML = ''
+  foundProducts.forEach(product => {
+            container.innerHTML += renderProducts(product)
+        });
+}
+
 let update_form = document.querySelector(".update-form");
 
 //  ON SUBMISSION OF THE edit_form, RUN THE FOLLOWING CODE
@@ -174,7 +194,7 @@ function updateProduct(id) {
 //creating a cart
 let cart = JSON.parse(localStorage.getItem("cart")) || []
 // will be filled with fetch call
-let products = []
+
 
 function addToCart(product_id) {
     //find item in from products
